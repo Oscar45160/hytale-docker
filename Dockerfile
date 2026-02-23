@@ -6,7 +6,7 @@ RUN apt-get update -y && \
 
 WORKDIR /home/container
 
-RUN curl -L -o hytale-downloader.zip "https://dl.hytale.com/server/hytale-downloader.zip" && \
+RUN curl -L -o hytale-downloader.zip "https://downloader.hytale.com/hytale-downloader.zip" && \
     unzip hytale-downloader.zip && \
     rm hytale-downloader.zip && \
     chmod +x hytale-downloader
