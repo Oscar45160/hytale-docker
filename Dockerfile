@@ -9,6 +9,8 @@ WORKDIR /home/container
 RUN curl -L -o hytale-downloader.zip "https://downloader.hytale.com/hytale-downloader.zip" && \
     unzip hytale-downloader.zip && \
     rm hytale-downloader.zip && \
-    ls -la
+    mv hytale-downloader-linux-amd64 hytale-downloader && \
+    chmod +x hytale-downloader && \
+    ./hytale-downloader -print-version
 
 CMD ["java", "-XX:AOTCache=HytaleServer.aot", "-jar", "HytaleServer.jar", "--assets", "Assets.zip"]
